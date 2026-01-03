@@ -37,6 +37,12 @@ if st.button("🔍 Recommend"):
             st.subheader(f"🎥 {row['title']}")
             st.write(f"**Description:** {row['description']}")
             st.write(f"📊 **Relevance Score:** {row['score']:.2f}")
+            if row["score"] > 0.6:
+                st.write("🔥 **Highly relevant match**")
+            elif row["score"] > 0.5:
+                st.write("👍 **Good thematic match**")
+            else:
+                st.write("✨ **Somewhat relevant**")
             st.markdown(f"💡 *{row['explanation']}*")
             st.markdown("---")
 

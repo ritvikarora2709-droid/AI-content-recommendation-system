@@ -31,7 +31,7 @@ content_embeddings = model.encode(
 )
 
 def explain_recommendation(query, description):
-    return f"Matches themes related to: {query.lower()}"
+    return f"Recommended because it aligns with themes like {description.replace(' ', ', ')}"
 
 def recommend(query, top_k=5):
     query_embedding = model.encode([query])
