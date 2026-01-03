@@ -34,10 +34,12 @@ if st.button("🔍 Recommend"):
         st.success("Recommended for you:")
 
         for _, row in results.iterrows():
-            st.markdown(f"### 🎥 {row['title']}")
-            st.markdown(f"**Description:** {row['description']}")
+            st.subheader(f"🎥 {row['title']}")
+            st.write(f"**Description:** {row['description']}")
+            st.write(f"📊 **Relevance Score:** {row['score']:.2f}")
+            st.markdown(f"💡 *{row['explanation']}*")
             st.markdown("---")
-            st.divider()
+
 
 # Footer
 st.markdown(
